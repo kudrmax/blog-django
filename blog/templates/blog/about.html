@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-        <title>{{title}}</title>
-    {% else %}
-        <title>Default Title</title>
-    {% endif %}
-</head>
-<body>
-    <h1>About</h1>
+{% extends "blog/base.html" %}
+{% block content %}
     <h3>Subheading</h3>
-    Some text
-</body>
-</html>
+    Some text 2
+{% endblock content %}
