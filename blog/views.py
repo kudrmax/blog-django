@@ -31,5 +31,7 @@ def home(request):
 
 
 def about(request):
-    # return HttpResponse('<h1>My About Page</h1>')
-    return render(request, template_name='blog/about.html')
+    context = {
+        'title': 'About Page',
+    }
+    return render(request, template_name='blog/about.html', context=context)
