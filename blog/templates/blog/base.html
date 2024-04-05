@@ -27,7 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
+                <div class="navbar-nav me-auto">
                     <a class="nav-item nav-link" href="{% url  'blog-home' %}">Home</a>
                     <a class="nav-item nav-link" href="{% url  'blog-about' %}">About</a>
                 </div>
@@ -36,12 +36,13 @@
 <!--                    <a class="nav-item nav-link" href="{% url  'login' %}">Login</a>-->
 <!--                    <a class="nav-item nav-link" href="{% url  'register' %}">Register</a>-->
 <!--                </div>-->
-                <div class="navbar-nav">
+                <div class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}
                         <button class="nav-item nav-link">Logout</button>
                     </form>
+                    <a class="nav-item nav-link" href="{% url 'profile' %}">{{user.username}}</a>
                     {% else %}
                     <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                     <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
