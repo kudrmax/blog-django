@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h2>You have been logged out.</h2>
+<!--<div class="border-top pt-3">-->
+<!--    <small class="text-muted">-->
+<!--        <a href="{% url 'login' %}">Log In again</a>-->
+<!--    </small>-->
+<!--</div>-->
+
+<!--<div class="border-top pt-3">-->
+<!--  <form method="POST" action="{% url 'logout' %}">-->
+<!--      {% csrf_token %}-->
+<!--      <button class="btn btn-outline-info" type="submit">Login</button>-->
+<!--  </form>-->
+<!--</div>-->
+<div class="border-top pt-3">
+<form action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  <a class="ml-2" href="{% url 'login' %}">Log In</a>
+</form>
+</div>
+{% endblock content %}
