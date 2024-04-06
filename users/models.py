@@ -10,10 +10,18 @@ class Profile(models.Model):
     def __str__(self):
         return f'Profile of {self.user.username}'
 
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super(Profile, self).save(*args, **kwargs)
 
         img = Image.open(self.image.path)
+
+        width, height = img.size
+        new_size = min(width, height)
+        left = (width - new_size) // 2
+        top = (height - new_size) // 2
+        right = (width + new_size) // 2
+        bottom = (height + new_size) // 2
+        img = img.crop((left, top, right, bottom))
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)

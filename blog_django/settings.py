@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "users.apps.UsersConfig",
     "crispy_forms",
-    "crispy_bootstrap4",
+    "crispy_bootstrap5",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -129,8 +129,8 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-RISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+RISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'blog-home'
